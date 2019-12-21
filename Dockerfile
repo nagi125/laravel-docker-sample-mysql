@@ -6,13 +6,13 @@ ENV COMPOSER_ALLOW_SUPERUSER 1
 # install Lib
 RUN curl -sL https://deb.nodesource.com/setup_11.x | bash - && \
     apt-get update -qq && \
-    apt-get install --no-install-recommends -y libpq-dev libonig-dev nodejs git zip unzip && \
+    apt-get install --no-install-recommends -y libpq-dev libonig-dev libzip-dev zlib1g-dev nodejs git zip unzip && \
     apt-get clean && \
     rm -rf /var/cache/apt && \
     npm install npm@latest -g
 
 # add php,apache-module
-RUN docker-php-ext-install mbstring pdo pdo_mysql
+RUN docker-php-ext-install mbstring pdo pdo_mysql zip
 
 # php.conf php-fpm.conf
 COPY docker/app/conf/php/php.ini /usr/local/etc/php/php.ini
