@@ -19,6 +19,10 @@ docker-compose exec app npm install
 printf "$COLOR:: build static files ...$COLOR_END\n"
 docker-compose exec app npm run dev
 
+printf "$COLOR:: generating .env ...$COLOR_END\n"
+touch .env
+echo 'APP_KEY=' > .env
+
 printf "$COLOR:: generating app-key ...$COLOR_END\n"
 docker-compose exec app php artisan key:generate
 
