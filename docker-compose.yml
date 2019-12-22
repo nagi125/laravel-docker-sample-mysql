@@ -29,10 +29,20 @@ services:
       DB_DATABASE: 'laravel_development'
       DB_USERNAME: 'docker'
       DB_PASSWORD: 'docker'
-      SESSION_DRIVER: 'redis'
-      CACHE_DRIVER: 'redis'
-      REDIS_HOST: 'redis'
-      FILESYSTEM_DRIVER: 's3'
+
+      BROADCAST_DRIVER: 'log'
+      CACHE_DRIVER: 'file'
+      QUEUE_CONNECTION: 'sync'
+      SESSION_DRIVER: 'cookie'
+      SESSION_LIFETIME: '120'
+
+      MAIL_DRIVER: 'smtp'
+      MAIL_HOST: 'smtp.mailtrap.io'
+      MAIL_PORT: '2525'
+      MAIL_USERNAME: 'null'
+      MAIL_PASSWORD: 'null'
+      MAIL_ENCRYPTION: 'null'
+
     volumes:
       - ./:/app
     expose:
