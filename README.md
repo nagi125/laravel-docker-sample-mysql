@@ -2,7 +2,7 @@
 Laravel開発環境テンプレート
  
 ## ミドルウェアのバージョン
-- PHP:7.5.x
+- PHP:7.4.x
 - Laravel:6.x
 - MySQL:5.7.x
 - Redis:5.0.x
